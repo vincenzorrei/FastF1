@@ -1,0 +1,370 @@
+============================================================
+F1 DATASET CONSOLIDATION REPORT (F1/local/)
+============================================================
+
+GENERAL SUMMARY
+--------------------
+Input Parquet Files Processed Successfully: 44
+Input Parquet Files with Errors/Skipped: 0
+Total Rows in Consolidated Dataset: 47,033
+Total Columns in Consolidated Dataset: 27
+Years Covered: 2022, 2023
+Unique Drivers (DriverNumber): 26
+Unique Races (RaceID): 44
+Consolidated DataFrame Memory Usage: 34.03 MB
+Output Parquet File Size: 0.84 MB
+
+STATISTICS PER INPUT FILE
+--------------------
+
+File: FORMULA_1_ETIHAD_AIRWAYS_ABU_DHABI_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 1,117
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 58
+  Total Missing Values: 2,169
+  Event Names: Abu Dhabi Grand Prix
+
+File: FORMULA_1_HEINEKEN_AUSTRALIAN_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 1,045
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 58
+  Total Missing Values: 2,068
+  Event Names: Australian Grand Prix
+
+File: FORMULA_1_ROLEX_GROSSER_PREIS_VON_ÖSTERREICH_2022_R_data.parquet
+  Rows Read: 1,324
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 71
+  Total Missing Values: 2,563
+  Event Names: Austrian Grand Prix
+
+File: FORMULA_1_AZERBAIJAN_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 891
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 51
+  Total Missing Values: 1,746
+  Event Names: Azerbaijan Grand Prix
+
+File: FORMULA_1_GULF_AIR_BAHRAIN_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 1,125
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 57
+  Total Missing Values: 2,142
+  Event Names: Bahrain Grand Prix
+
+File: FORMULA_1_ROLEX_BELGIAN_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 792
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 44
+  Total Missing Values: 1,548
+  Event Names: Belgian Grand Prix
+
+File: FORMULA_1_LENOVO_BRITISH_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 815
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 52
+  Total Missing Values: 1,580
+  Event Names: British Grand Prix
+
+File: FORMULA_1_AWS_GRAND_PRIX_DU_CANADA_2022_R_data.parquet
+  Rows Read: 1,264
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 70
+  Total Missing Values: 2,469
+  Event Names: Canadian Grand Prix
+
+File: FORMULA_1_HEINEKEN_DUTCH_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 1,392
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 72
+  Total Missing Values: 2,646
+  Event Names: Dutch Grand Prix
+
+File: FORMULA_1_ROLEX_GRAN_PREMIO_DEL_MADE_IN_ITALY_E_DELL'EMILIA-ROMAGNA_2022_R_data.parquet
+  Rows Read: 1,132
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 63
+  Total Missing Values: 2,219
+  Event Names: Emilia Romagna Grand Prix
+
+File: FORMULA_1_LENOVO_GRAND_PRIX_DE_FRANCE_2022_R_data.parquet
+  Rows Read: 958
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 53
+  Total Missing Values: 1,878
+  Event Names: French Grand Prix
+
+File: FORMULA_1_ARAMCO_MAGYAR_NAGYDÍJ_2022_R_data.parquet
+  Rows Read: 1,383
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 70
+  Total Missing Values: 2,683
+  Event Names: Hungarian Grand Prix
+
+File: FORMULA_1_PIRELLI_GRAN_PREMIO_D’ITALIA_2022_R_data.parquet
+  Rows Read: 971
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 53
+  Total Missing Values: 1,889
+  Event Names: Italian Grand Prix
+
+File: FORMULA_1_HONDA_JAPANESE_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 507
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 29
+  Total Missing Values: 1,007
+  Event Names: Japanese Grand Prix
+
+File: FORMULA_1_HEINEKEN_GRAN_PREMIO_DE_LA_CIUDAD_DE_MÉXICO_2022_R_data.parquet
+  Rows Read: 1,379
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 71
+  Total Missing Values: 2,713
+  Event Names: Mexico City Grand Prix
+
+File: FORMULA_1_CRYPTO.COM_MIAMI_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 1,057
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 57
+  Total Missing Values: 2,094
+  Event Names: Miami Grand Prix
+
+File: FORMULA_1_GRAND_PRIX_DE_MONACO_2022_R_data.parquet
+  Rows Read: 1,179
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 64
+  Total Missing Values: 2,257
+  Event Names: Monaco Grand Prix
+
+File: FORMULA_1_STC_SAUDI_ARABIAN_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 820
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 18
+  Unique Lap Numbers: 50
+  Total Missing Values: 1,651
+  Event Names: Saudi Arabian Grand Prix
+
+File: FORMULA_1_SINGAPORE_AIRLINES_SINGAPORE_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 945
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 59
+  Total Missing Values: 1,957
+  Event Names: Singapore Grand Prix
+
+File: FORMULA_1_PIRELLI_GRAN_PREMIO_DE_ESPAÑA_2022_R_data.parquet
+  Rows Read: 1,230
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 66
+  Total Missing Values: 2,352
+  Event Names: Spanish Grand Prix
+
+File: FORMULA_1_HEINEKEN_GRANDE_PRÊMIO_DE_SÃO_PAULO_2022_R_data.parquet
+  Rows Read: 1,259
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 71
+  Total Missing Values: 2,435
+  Event Names: São Paulo Grand Prix
+
+File: FORMULA_1_ARAMCO_UNITED_STATES_GRAND_PRIX_2022_R_data.parquet
+  Rows Read: 992
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 56
+  Total Missing Values: 1,986
+  Event Names: United States Grand Prix
+
+File: FORMULA_1_ETIHAD_AIRWAYS_ABU_DHABI_GRAND_PRIX_2023__R_data.parquet
+  Rows Read: 1,157
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 58
+  Total Missing Values: 2,239
+  Event Names: Abu Dhabi Grand Prix
+
+File: FORMULA_1_ROLEX_AUSTRALIAN_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 1,003
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 58
+  Total Missing Values: 1,984
+  Event Names: Australian Grand Prix
+
+File: FORMULA_1_ROLEX_GROSSER_PREIS_VON_ÖSTERREICH_2023_R_data.parquet
+  Rows Read: 1,354
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 71
+  Total Missing Values: 2,583
+  Event Names: Austrian Grand Prix
+
+File: FORMULA_1_AZERBAIJAN_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 962
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 51
+  Total Missing Values: 1,908
+  Event Names: Azerbaijan Grand Prix
+
+File: FORMULA_1_GULF_AIR_BAHRAIN_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 1,056
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 57
+  Total Missing Values: 2,012
+  Event Names: Bahrain Grand Prix
+
+File: FORMULA_1_MSC_CRUISES_BELGIAN_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 816
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 44
+  Total Missing Values: 1,558
+  Event Names: Belgian Grand Prix
+
+File: FORMULA_1_ARAMCO_BRITISH_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 971
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 52
+  Total Missing Values: 1,898
+  Event Names: British Grand Prix
+
+File: FORMULA_1_PIRELLI_GRAND_PRIX_DU_CANADA_2023_R_data.parquet
+  Rows Read: 1,317
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 70
+  Total Missing Values: 2,571
+  Event Names: Canadian Grand Prix
+
+File: FORMULA_1_HEINEKEN_DUTCH_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 1,343
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 72
+  Total Missing Values: 2,517
+  Event Names: Dutch Grand Prix
+
+File: FORMULA_1_QATAR_AIRWAYS_HUNGARIAN_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 1,252
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 70
+  Total Missing Values: 2,429
+  Event Names: Hungarian Grand Prix
+
+File: FORMULA_1_PIRELLI_GRAN_PREMIO_D’ITALIA_2023__R_data.parquet
+  Rows Read: 967
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 52
+  Total Missing Values: 1,921
+  Event Names: Italian Grand Prix
+
+File: FORMULA_1_LENOVO_JAPANESE_GRAND_PRIX_2023__R_data.parquet
+  Rows Read: 880
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 53
+  Total Missing Values: 1,729
+  Event Names: Japanese Grand Prix
+
+File: FORMULA_1_HEINEKEN_SILVER_LAS_VEGAS_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 946
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 50
+  Total Missing Values: 1,918
+  Event Names: Las Vegas Grand Prix
+
+File: FORMULA_1_GRAN_PREMIO_DE_LA_CIUDAD_DE_MÉXICO_2023_R_data.parquet
+  Rows Read: 1,282
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 71
+  Total Missing Values: 2,514
+  Event Names: Mexico City Grand Prix
+
+File: FORMULA_1_CRYPTO.COM_MIAMI_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 1,138
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 57
+  Total Missing Values: 2,236
+  Event Names: Miami Grand Prix
+
+File: FORMULA_1_GRAND_PRIX_DE_MONACO_2023_R_data.parquet
+  Rows Read: 1,515
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 78
+  Total Missing Values: 2,959
+  Event Names: Monaco Grand Prix
+
+File: FORMULA_1_QATAR_AIRWAYS_QATAR_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 1,006
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 19
+  Unique Lap Numbers: 57
+  Total Missing Values: 1,909
+  Event Names: Qatar Grand Prix
+
+File: FORMULA_1_STC_SAUDI_ARABIAN_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 943
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 50
+  Total Missing Values: 1,857
+  Event Names: Saudi Arabian Grand Prix
+
+File: FORMULA_1_SINGAPORE_AIRLINES_SINGAPORE_GRAND_PRIX_2023__R_data.parquet
+  Rows Read: 1,088
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 19
+  Unique Lap Numbers: 62
+  Total Missing Values: 2,155
+  Event Names: Singapore Grand Prix
+
+File: FORMULA_1_AWS_GRAN_PREMIO_DE_ESPAÑA_2023_R_data.parquet
+  Rows Read: 1,312
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 66
+  Total Missing Values: 2,536
+  Event Names: Spanish Grand Prix
+
+File: FORMULA_1_ROLEX_GRANDE_PRÊMIO_DE_SÃO_PAULO_2023_R_data.parquet
+  Rows Read: 1,109
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 71
+  Total Missing Values: 2,104
+  Event Names: São Paulo Grand Prix
+
+File: FORMULA_1_LENOVO_UNITED_STATES_GRAND_PRIX_2023_R_data.parquet
+  Rows Read: 1,014
+  Columns Read: 24
+  Unique Drivers (DriverNumber): 20
+  Unique Lap Numbers: 56
+  Total Missing Values: 1,949
+  Event Names: United States Grand Prix

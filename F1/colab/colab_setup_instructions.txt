@@ -1,0 +1,43 @@
+# Instructions for setting up the Colab Environment
+
+## 1. Mount Google Drive
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+```
+
+## 2. Navigate to Project Directory
+# Adjust the path to where your 'FASTF1/F1/colab/' directory is located in your Google Drive.
+# For example, if your project root 'FASTF1' is in 'My Drive/Colab Notebooks/FASTF1',
+# then the path would be '/content/drive/My Drive/Colab Notebooks/FASTF1/F1/colab/'
+# It's crucial to set this path correctly.
+
+# Example:
+# %cd '/content/drive/My Drive/Colab Notebooks/FASTF1/F1/colab/'
+
+# Placeholder - USER MUST UPDATE THIS PATH:
+# %cd '/content/drive/My Drive/path/to/your/FASTF1/F1/colab/'
+
+
+## 3. Install Dependencies
+# Ensure 'requirements.txt' is in the current directory (e.g., F1/colab/)
+# The command should be run from the directory containing requirements.txt
+
+!pip install -r requirements.txt
+
+## 4. Verify Installations (Optional)
+# You can add import statements for key libraries to verify they were installed correctly.
+# Example:
+# import fastf1
+# import pandas
+# import torch
+# print(f"FastF1 version: {fastf1.__version__}")
+# print(f"Pandas version: {pandas.__version__}")
+# print(f"PyTorch version: {torch.__version__}")
+
+## Notes:
+# - Ensure the Colab runtime has GPU enabled if you plan to use it for model training.
+# - The `%cd` command is a magic command in IPython environments (like Colab) to change directory.
+# - The path to `requirements.txt` in the `!pip install` command assumes you have navigated
+#   to the `F1/colab/` directory where `requirements.txt` is located.
+#   If running from a different base path, adjust accordingly (e.g., `!pip install -r F1/colab/requirements.txt`).

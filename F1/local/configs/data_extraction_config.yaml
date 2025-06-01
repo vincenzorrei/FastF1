@@ -1,0 +1,62 @@
+ # Percorso per la cache di FastF1
+fastf1_cache_path: "ff1_cache/"
+
+# Directory di output per i dati grezzi estratti (formato Parquet)
+raw_data_output_directory: "F1/local/drive/raw_data/"
+
+# File CSV per registrare lo stato dei download
+download_log_file: "F1/local/drive/data_download_log.csv"
+
+# Parametri per l'interazione con l'API FastF1 e la qualità dei dati
+request_delay_seconds: 5       # Pausa (in secondi) tra le richieste API per eventi diversi
+max_nan_percentage_threshold: 0.05 # Soglia massima di NaN tollerata per considerare validi i dati di una gara
+max_retries_on_failure: 3      # Numero massimo di tentativi in caso di fallimento del download di una sessione
+
+# Anni di interesse per l'estrazione dei dati (ordine inverso per test locale)
+# Lo script deriverà automaticamente le gare per questi anni.
+years_to_fetch: [2023, 2022] # Per test locale, poi [2025, 2024, ..., 2018] per Colab
+
+output_format: "parquet" # Formato di salvataggio dei dati estratti
+
+# Colonne da estrarre (verificare i nomi esatti forniti da FastF1)
+# Devono essere valori grezzi, non normalizzati.
+# Devono essere valori grezzi, non normalizzati.
+columns_to_extract:
+  - 'DriverNumber'    # o 'DriverID'
+  - 'Driver'          # TLA del pilota (es. VER) - FastF1 uses 'Driver' in laps object
+  - 'TeamName'
+  - 'Year'            # Estratto dalla sessione
+  - 'EventName'       # Nome del GP, estratto dalla sessione
+  - 'Country'         # Paese dell'evento
+  - 'CircuitName'     # Nome del circuito
+  - 'LapNumber'
+  - 'Position'
+  - 'LapTime'         # Come timedelta, da convertire poi in secondi se necessario
+  - 'Stint'
+  - 'Compound'
+  - 'TyreLife'        # Età della gomma in giri
+  - 'FreshTyre'       # Booleano
+  - 'PitInTime'       # Timestamp o NaN
+  - 'PitOutTime'      # Timestamp o NaN
+  # Le seguenti potrebbero richiedere calcoli aggiuntivi o telemetria se non direttamente disponibili per lap:
+  # 'TireMeters'      # Metri percorsi con il set di gomme attuale
+  # 'DriverMeters'    # Metri totali percorsi dal pilota in gara
+  - 'AirTemp'
+  - 'Humidity'
+  - 'TrackTemp'
+  - 'Pressure'
+  - 'WindSpeed'
+  - 'WindDirection'
+  - 'TrackStatus'     # Es. '1' (Green), '2' (Yellow), '4' (SC), '5' (Red)
+  - 'IsAccurate'      # Flag di FastF1 sulla precisione dei dati del giro
+
+# Colonne considerate critiche per il check della percentuale di NaN
+critical_columns_for_nan_check:
+  - 'Driver'
+  - 'LapTime'
+  - 'Stint'
+  - 'Compound'
+  - 'TyreLife'
+# Weather data can be sparse; we'll still extract it but not make it critical for the NaN failure threshold.
+# - 'AirTemp' 
+# - 'TrackTemp'

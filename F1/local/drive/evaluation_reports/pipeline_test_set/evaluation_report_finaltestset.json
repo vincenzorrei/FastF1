@@ -1,0 +1,69 @@
+{
+    "evaluation_timestamp": "2025-06-01T01:24:06.723949",
+    "split_name": "FinalTestSet",
+    "decision_threshold_used": 0.9992227554321289,
+    "primary_task_metrics (tire_change)": {
+        "f1_score": 0.5974955277280859,
+        "precision": 0.7695852534562212,
+        "recall": 0.48830409356725146,
+        "accuracy": 0.9776752492930496,
+        "roc_auc": 0.9665846742963643,
+        "pr_auc": 0.6641499768278398,
+        "true_positives": 334,
+        "true_negatives": 19373,
+        "false_positives": 100,
+        "false_negatives": 350,
+        "specificity": 0.9948646844348585,
+        "sensitivity": 0.48830409356725146,
+        "balanced_accuracy": 0.7415843890010549
+    },
+    "secondary_task_metrics (tire_type)": {
+        "accuracy": 0.4239766081871345,
+        "num_samples": 684,
+        "classification_report": {
+            "0": {
+                "precision": 0.516597510373444,
+                "recall": 0.7410714285714286,
+                "f1-score": 0.60880195599022,
+                "support": 336.0
+            },
+            "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 55.0
+            },
+            "2": {
+                "precision": 0.25,
+                "recall": 0.08620689655172414,
+                "f1-score": 0.1282051282051282,
+                "support": 174.0
+            },
+            "4": {
+                "precision": 0.18309859154929578,
+                "recall": 0.22807017543859648,
+                "f1-score": 0.203125,
+                "support": 114.0
+            },
+            "6": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 5.0
+            },
+            "accuracy": 0.4239766081871345,
+            "macro avg": {
+                "precision": 0.18993922038454797,
+                "recall": 0.21106970011234988,
+                "f1-score": 0.18802641683906965,
+                "support": 684.0
+            },
+            "weighted avg": {
+                "precision": 0.3478801212311358,
+                "recall": 0.4239766081871345,
+                "f1-score": 0.36552836187193893,
+                "support": 684.0
+            }
+        }
+    }
+}

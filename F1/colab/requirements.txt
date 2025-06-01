@@ -1,0 +1,15 @@
+# Dependencies for F1/colab/ environment
+
+fastf1
+pandas
+PyYAML
+requests
+torch
+torchvision # Often bundled with torch, good for Colab compatibility
+torchaudio # Often bundled with torch, good for Colab compatibility
+joblib
+scikit-learn
+matplotlib
+seaborn
+# numpy is usually a sub-dependency of pandas, scikit-learn, and torch.
+# No need to list it explicitly unless a specific version is required.

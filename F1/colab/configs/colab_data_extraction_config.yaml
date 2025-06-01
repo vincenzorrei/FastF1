@@ -1,0 +1,60 @@
+# Configuration for Colab Data Extraction
+
+# Base path on Google Drive for all project data
+# Assumes Google Drive is mounted at /content/drive/
+# Users should create a "FASTF1_Project" folder in their "MyDrive".
+google_drive_base_path: "/content/drive/MyDrive/FASTF1_Project/"
+
+# Paths derived from google_drive_base_path
+# Note: PyYAML doesn't directly support !join or !Ref.
+# The Python script will need to construct these paths using os.path.join
+# if this YAML is loaded directly. For simplicity here, we'll write them out,
+# but the script should ideally use the base_path and construct others.
+fastf1_cache_path: "/content/drive/MyDrive/FASTF1_Project/ff1_cache_colab/"
+raw_data_output_directory: "/content/drive/MyDrive/FASTF1_Project/raw_data/"
+download_log_file: "/content/drive/MyDrive/FASTF1_Project/logs/data_download_log_colab.csv"
+
+# API interaction and data quality parameters
+request_delay_seconds: 5
+max_nan_percentage_threshold: 0.05 # For critical columns
+max_retries_on_failure: 3
+
+# Years to fetch data for, in reverse chronological order
+years_to_fetch: [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018]
+
+output_format: "parquet"
+
+# Columns to extract (raw, non-normalized)
+columns_to_extract:
+  - 'DriverNumber'
+  - 'Driver'          # TLA (e.g., VER)
+  - 'TeamName'        # Will be mapped to 'Team' by the script if needed
+  - 'Year'
+  - 'EventName'
+  - 'Country'
+  - 'CircuitName'
+  - 'LapNumber'
+  - 'Position'
+  - 'LapTime'
+  - 'Stint'
+  - 'Compound'
+  - 'TyreLife'
+  - 'FreshTyre'
+  - 'PitInTime'
+  - 'PitOutTime'
+  - 'AirTemp'
+  - 'Humidity'
+  - 'TrackTemp'
+  - 'Pressure'
+  - 'WindSpeed'
+  - 'WindDirection'
+  - 'TrackStatus'
+  - 'IsAccurate'
+
+# Critical columns for NaN percentage check
+critical_columns_for_nan_check:
+  - 'Driver'
+  - 'LapTime'
+  - 'Stint'
+  - 'Compound'
+  - 'TyreLife'

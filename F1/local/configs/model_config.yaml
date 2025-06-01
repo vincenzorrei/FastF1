@@ -1,0 +1,55 @@
+# Configuration for the F1 Tyre Strategy Prediction Model (Local Development)
+
+model:
+  # RNN (LSTM) specific parameters
+  rnn:
+    # hidden_size will be capped at 64 for CPU, or use this value for GPU
+    # Based on Vincenzo's script: 64 for CPU, 128 for GPU
+    hidden_size: 128 
+    num_layers: 2      # Default in new model_def.py, Vincenzo used 3
+    dropout_lstm: 0.3  # Dropout for LSTM layers (if num_layers > 1)
+
+  # Task-specific head parameters
+  heads:
+    dropout_head: 0.2  # Dropout for the dense layers in each prediction head
+
+  # Loss function parameters
+  loss:
+    alpha: 0.90 # Weight for tire_change_loss (primary task)
+    beta: 0.10  # Weight for tire_type_loss (secondary task)
+    # pos_weight_tire_change: Calculated based on dataset imbalance. 
+    # Example from Vincenzo's script was 29.0. This should be calculated during training setup.
+    # For now, can be left None or set to a placeholder if CombinedLoss requires it.
+    # The model_def.py's CombinedLoss handles None for pos_weight.
+    pos_weight_tire_change: 29.0 # Placeholder, to be verified/calculated
+
+# Training parameters (to be used by the training script)
+training:
+  device: "auto"       # Options: "auto", "cpu", "cuda"
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 2 # Reduced for initial testing
+  sequence_length: 10  # Must match sequence_length used in prepare_model_data.py
+
+  # Early stopping configuration (optional)
+  early_stopping:
+    patience: 5
+    min_delta: 0.001
+
+  # Scheduler configuration (optional)
+  scheduler:
+    type: "ReduceLROnPlateau" # Example: "StepLR", "ReduceLROnPlateau"
+    patience: 2               # For ReduceLROnPlateau
+    factor: 0.1               # For ReduceLROnPlateau
+    step_size: 10             # For StepLR
+    gamma: 0.1                # For StepLR
+
+# Data related paths (primarily for reference, scripts might hardcode or derive them)
+# These are relative to the F1/local/ directory
+data:
+  artifacts_dir: "drive/artifacts"
+  model_input_dir: "drive/model_input"
+  # feature_engineered_data_path: "drive/feature_engineered_data/featured_dataset.parquet" # Source for prepare_model_data.py
+  # feature_columns_file: "feature_columns.joblib" # Inside artifacts_dir
+  # encoders_file: "encoders.pkl"                   # Inside artifacts_dir
+  # scaler_file: "scaler.pkl"                       # Inside artifacts_dir

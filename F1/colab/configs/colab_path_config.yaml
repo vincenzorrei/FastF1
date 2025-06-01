@@ -1,0 +1,95 @@
+# F1/colab/configs/colab_path_config.yaml
+# Standardized paths for Google Drive access in the Colab environment.
+#
+# IMPORTANT:
+# The `base_project_drive_path` is the root path within your Google Drive
+# where the 'FASTF1' project (containing F1/colab/, F1/local/, etc.) is located.
+# USER MUST UPDATE THIS PATH to match their Google Drive structure.
+#
+# Example: If your 'FASTF1' project folder is directly in 'My Drive',
+#          then base_project_drive_path would be '/content/drive/My Drive/FASTF1'.
+# Example: If it's in 'My Drive/Colab Notebooks/MyProjects/FASTF1',
+#          then base_project_drive_path would be '/content/drive/My Drive/Colab Notebooks/MyProjects/FASTF1'.
+
+# --- USER MUST CONFIGURE THIS ---
+base_project_drive_path: "/content/drive/My Drive/path/to/your/FASTF1" # Placeholder!
+
+# --- Derived Paths (relative to base_project_drive_path/F1/colab/drive/) ---
+# These paths assume a 'drive' subdirectory within 'F1/colab/' on Google Drive,
+# mirroring the structure used in F1/local/drive/.
+
+colab_root: "F1/colab" # Relative to base_project_drive_path
+
+# Main 'drive' simulation directory within F1/colab/ on Google Drive
+drive_simulation_root: "{base_project_drive_path}/{colab_root}/drive"
+
+# Data paths
+raw_data_output_directory: "{drive_simulation_root}/raw_data"
+processed_data_directory: "{drive_simulation_root}/processed_data"
+feature_engineered_data_directory: "{drive_simulation_root}/feature_engineered_data"
+model_input_directory: "{drive_simulation_root}/model_input"
+
+# Model and artifact paths
+models_directory: "{drive_simulation_root}/models"
+artifacts_directory: "{drive_simulation_root}/artifacts" # For scalers, encoders, plots, reports
+
+# Log paths
+logs_directory: "{drive_simulation_root}/logs"
+download_log_file: "{drive_simulation_root}/data_download_log.csv" # Specific log for downloads
+pipeline_log_file: "{logs_directory}/colab_pipeline.log"
+data_extraction_log_file: "{logs_directory}/colab_data_extraction.log"
+data_consolidation_log_file: "{logs_directory}/colab_data_consolidation.log"
+feature_engineering_log_file: "{logs_directory}/colab_feature_engineering.log"
+preprocessing_log_file: "{logs_directory}/colab_preprocessing.log"
+training_log_directory: "{logs_directory}/training_logs" # For detailed epoch-by-epoch logs
+
+# Configuration paths (within F1/colab/configs/ on Google Drive)
+colab_configs_dir: "{base_project_drive_path}/{colab_root}/configs"
+data_extraction_config_colab: "{colab_configs_dir}/colab_data_extraction_config.yaml"
+model_config_colab: "{colab_configs_dir}/colab_model_config.yaml"
+# This path config file itself:
+path_config_colab: "{colab_configs_dir}/colab_path_config.yaml"
+
+
+# FastF1 Cache path on Google Drive
+# IMPORTANT: Caching to Google Drive can be slow. Consider if this is optimal.
+# An alternative is to use Colab's local ephemeral storage for cache,
+# but it will be lost when the runtime disconnects.
+# For persistent cache across sessions (though potentially slower), Drive is an option.
+fastf1_cache_path_drive: "{drive_simulation_root}/fastf1_cache_colab"
+
+# --- Paths for scripts and notebooks (within F1/colab/ on Google Drive) ---
+# These are relative to base_project_drive_path
+colab_src_dir: "{base_project_drive_path}/{colab_root}/src"
+colab_notebooks_dir: "{base_project_drive_path}/{colab_root}/notebooks"
+
+# Example of how to use these in Python after loading this YAML:
+# import yaml
+# from pathlib import Path
+#
+# def load_path_config(config_file="F1/colab/configs/colab_path_config.yaml"):
+#     with open(config_file, 'r') as f:
+#         raw_config = yaml.safe_load(f)
+#
+#     # Resolve the base path first
+#     base_drive_path = raw_config['base_project_drive_path']
+#     if "path/to/your" in base_drive_path:
+#         print("WARNING: 'base_project_drive_path' in colab_path_config.yaml needs to be updated!")
+#
+#     resolved_paths = {}
+#     for key, value in raw_config.items():
+#         if isinstance(value, str):
+#             resolved_paths[key] = Path(value.format(
+#                 base_project_drive_path=base_drive_path,
+#                 colab_root=raw_config.get('colab_root', 'F1/colab'), # Default if not in raw_config for some reason
+#                 drive_simulation_root=Path(base_drive_path) / raw_config.get('colab_root', 'F1/colab') / 'drive',
+#                 logs_directory=Path(base_drive_path) / raw_config.get('colab_root', 'F1/colab') / 'drive' / 'logs',
+#                 colab_configs_dir=Path(base_drive_path) / raw_config.get('colab_root', 'F1/colab') / 'configs'
+#             ))
+#         else:
+#             resolved_paths[key] = value # Keep non-string values as is
+#     return resolved_paths
+#
+# paths = load_path_config()
+# print(f"Raw data will be saved to: {paths['raw_data_output_directory']}")
+# print(f"Models will be saved to: {paths['models_directory']}")
